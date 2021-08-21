@@ -1,0 +1,30 @@
+<div class="asset-cell">
+  <div *ngIf="active; else emptyCell">
+    <div *ngIf="isAutoMode; else manualBlock">
+      <p>Amount: {{autoAmount}}</p>
+      <div>
+        Min: {{active.minAmount}} <span>Max: {{active.maxAmount}}</span>
+      </div>
+    </div>
+
+    <ng-template #manualBlock>
+      <button (click)="addActiveToUser()" mat-stroked-button>Buy</button>
+      <div style="display: flex; flex-direction: column">
+        <mat-form-field class="input-form">
+          <mat-label>Amount:</mat-label>
+          <input matInput type="text" [(ngModel)]="amountValue">
+        </mat-form-field>
+      </div>
+    </ng-template>
+
+    <div>
+      Prev: {{active.prevPrice}} <span>Cur: {{active.curPrice}}</span>
+    </div>
+  </div>
+
+  <ng-template #emptyCell>
+    <p>Not available</p>
+  </ng-template>
+</div>
+
+

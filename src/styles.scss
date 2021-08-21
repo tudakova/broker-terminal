@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    width: 150px;
+  }
+
+  th .content, td .content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  margin: 0 auto;
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 10px;
+
+    &-input {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .invalid-feedback {
+      color: red;
+      font-size: 12px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+  }
+}

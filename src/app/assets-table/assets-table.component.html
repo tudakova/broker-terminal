@@ -1,0 +1,27 @@
+<app-assets-table-settings></app-assets-table-settings>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z0 table">
+
+  <ng-container matColumnDef="dealerName">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element"> {{element.dealerName}} </td>
+  </ng-container>
+
+  <ng-container *ngFor="let column of columns.slice(1)" [matColumnDef]="column.name">
+    <th mat-header-cell *matHeaderCellDef>
+      <div class="content">{{column.name}}</div>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <app-asset-cell [active]="getActive(element, column.id)"
+                      [isAutoMode]="column.isAutoMode"
+                      [activeName]="column.name"
+                      [autoAmount]="column.autoAmount"
+                      [dealerName]="element.dealerName"
+                      class="content">
+      </app-asset-cell>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsName"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsName;"></tr>
+</table>

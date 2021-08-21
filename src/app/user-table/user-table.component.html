@@ -1,0 +1,19 @@
+<div class="user-table">
+  <h2>My Assets</h2>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 table">
+
+    <ng-container matColumnDef="actives">
+      <td mat-cell *matCellDef="let element"> My Assets </td>
+    </ng-container>
+
+    <ng-container *ngFor="let column of columns.slice(1)" [matColumnDef]="column.name">
+      <td mat-cell *matCellDef="let element">
+        <div class="content">{{element[column.name]}}</div>
+      </td>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: columnsName;"></tr>
+  </table>
+</div>
+
