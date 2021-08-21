@@ -1,8 +1,26 @@
 .asset-cell {
   margin: 10px 0;
 
+  .auto {
+    margin-bottom: 10px;
+
+    .amount {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   .input-form {
     width: 100px;
     margin-top: 10px;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+
+    span{
+      color: darkgreen;
+    }
   }
 }

@@ -1,8 +1,8 @@
 <div class="asset-cell">
   <div *ngIf="active; else emptyCell">
-    <div *ngIf="isAutoMode; else manualBlock">
-      <p>Amount: {{autoAmount}}</p>
-      <div>
+    <div *ngIf="isAutoMode; else manualBlock" class="auto">
+      <div>Amount: {{autoAmount}}</div>
+      <div class="amount">
         Min: {{active.minAmount}} <span>Max: {{active.maxAmount}}</span>
       </div>
     </div>
@@ -17,7 +17,7 @@
       </div>
     </ng-template>
 
-    <div>
+    <div class="price">
       Prev: {{active.prevPrice}} <span>Cur: {{active.curPrice}}</span>
     </div>
   </div>
